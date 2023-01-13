@@ -1,0 +1,7 @@
+.TodoList ul {
+    list-style: none;
+    gap: 4px;
+    display: grid;
+    gap: 8px;
+    padding: 0;
+}

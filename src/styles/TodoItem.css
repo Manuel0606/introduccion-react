@@ -1,0 +1,68 @@
+.TodoItem {
+    display: grid;
+    grid-template-columns: 40px auto;
+    width: 500px;
+    height: 44px;
+    align-items: center;
+    gap: 8px;
+}
+
+.TodoItem .icon {
+    place-self: center;
+    stroke-width: 2px;
+    fill: none;
+    place-self: center;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.TodoItem .check-icon {
+    height: 30px;
+    width: 30px;
+    stroke: #f4f4f4;
+}
+
+.TodoItem .icon-check--active {
+    stroke:  #4CAF50;
+}
+
+.TodoItem .check-icon:hover {
+    cursor: pointer;
+    stroke-opacity: 60%;
+}
+
+
+.TodoItem .TodoItem-Conten {
+    display: grid;
+    grid-template-columns: auto 40px;
+    background-color: #fabb18;
+    height: 100%;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.TodoItem .TodoItem-Conten .TodoItem-p {
+    margin: 0;
+    padding: 0 8px;
+    color: white;
+}
+
+.TodoItem .TodoItem-Conten .TodoItem-p--complete {
+    text-decoration: line-through;
+}
+
+.TodoItem .TodoItem-Conten .x-icon {
+    height: 24px;
+    width: 24px;
+    stroke: #000000;
+}
+
+.TodoItem .TodoItem-Conten .x-icon:hover {
+    stroke: darkred;
+    cursor: pointer;
+}
+
+.TodoItem .TodoItem-Conten .x-icon:active,
+.TodoItem .check-icon:active {
+    width: 50%;
+}
