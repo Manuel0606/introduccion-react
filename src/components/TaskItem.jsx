@@ -3,19 +3,11 @@ import React from "react";
 import '../styles/TaskItem.css'
 
 function TaskItem(props) {
-    const onComplete = () => {
-        alert('Ya completaste el Task ' + props.text)
-    };
-
-    const onDelete = () => {
-        alert('Borraste el Task ' + props.text)
-    };
-
     return (
         <li className="TaskItem">
             <svg 
                 className={`icon check-icon ${props.completed && 'icon-check--active'}`} 
-                onClick={onComplete}
+                onClick={props.onComplete}
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 24 24" 
             >
@@ -26,7 +18,7 @@ function TaskItem(props) {
                 <p className={`TaskItem-p ${props.completed && 'TaskItem-p--complete'}`}>{props.text}</p>
                 <svg 
                     className="icon x-icon" 
-                    onClick={onDelete}
+                    onClick={props.onDelete}
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 24 24"
                 >

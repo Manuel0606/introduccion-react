@@ -24,8 +24,22 @@ function App() {
   const totalTasks = tasks.length;
 
   const tasksFilter = stateSearchValue < 1 
-    ? tasks 
-    : tasks.filter(task => !!task.text.toLowerCase().includes(stateSearchValue.toLowerCase()));
+  ? tasks 
+  : tasks.filter(task => !!task.text.toLowerCase().includes(stateSearchValue.toLowerCase()));
+  
+  const completeTask = (text) => {
+    const taskIndex = tasks.findIndex(task => task.text === text);
+    const newTasks = [...tasks];
+    newTasks[taskIndex].completed = !newTasks[taskIndex].completed;
+    setTasks(newTasks);
+  };
+
+  const deleteTask = (text) => {
+    const taskIndex = tasks.findIndex(task => task.text === text);
+    const newTasks = [...tasks];
+    newTasks.splice(taskIndex, 1);
+    setTasks(newTasks);
+  };
 
   return (
     <React.Fragment>
@@ -47,6 +61,8 @@ function App() {
               key={task.text} 
               text={task.text} 
               completed={task.completed}
+              onComplete={() => completeTask(task.text)}
+              onDelete={() => deleteTask(task.text)}
             />
           ))}
         </TaskList>
