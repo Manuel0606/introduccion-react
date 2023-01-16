@@ -66,3 +66,9 @@
 .TodoItem .check-icon:active {
     width: 50%;
 }
+
+@media (max-width: 640px) {
+    .TodoItem {
+        width: 320px;
+    }
+}

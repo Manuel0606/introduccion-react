@@ -1,6 +1,12 @@
 .TodoCounter {
-    font-size: 24px;
     text-align: center;
     color: #e4efe4;
     font-size: 52px;
+    padding: 0 16px;
+}
+
+@media (max-width: 640px) {
+    .TodoCounter {
+        font-size: 32px;
+    }
 }

@@ -16,3 +16,9 @@
 .TodoSearch:focus {
     outline-color: #fabb18;
 }
+
+@media (max-width: 640px) {
+    .TodoSearch {
+        width: 320px;
+    }
+}
