@@ -1,4 +1,4 @@
-.TodoCounter {
+.TaskCounter {
     text-align: center;
     color: #e4efe4;
     font-size: 52px;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 640px) {
-    .TodoCounter {
+    .TaskCounter {
         font-size: 32px;
     }
 }

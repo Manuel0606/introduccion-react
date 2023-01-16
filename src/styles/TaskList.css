@@ -1,4 +1,4 @@
-.TodoList ul {
+.TaskList ul {
     list-style: none;
     gap: 4px;
     display: grid;
@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 640px) {
-    .TodoList {
+    .TaskList {
         margin-bottom: 76px;
     }
 }

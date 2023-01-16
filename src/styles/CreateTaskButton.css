@@ -1,4 +1,4 @@
-.CreateTodoButton {
+.CreateTaskButton {
     position: fixed;
     bottom: 24px;
     right: 24px;
@@ -18,10 +18,10 @@
     transition: 0.3s ease;
 }
 
-.CreateTodoButton:hover {
+.CreateTaskButton:hover {
     cursor: pointer;
 }
 
-.CreateTodoButton:active {
+.CreateTaskButton:active {
     transform: rotate(224deg);
 }

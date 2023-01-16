@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
 
-.TodoSearch {
+.TaskSearch {
     background-color: #e4efe4;
     width: 500px;
     height: 52px;
@@ -13,12 +13,12 @@
     justify-content: center;
 }
 
-.TodoSearch:focus {
+.TaskSearch:focus {
     outline-color: #fabb18;
 }
 
 @media (max-width: 640px) {
-    .TodoSearch {
+    .TaskSearch {
         width: 320px;
     }
 }

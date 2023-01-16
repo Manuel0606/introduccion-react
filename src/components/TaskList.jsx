@@ -1,10 +1,10 @@
 import React from "react";
 
-import '../styles/TodoList.css'
+import '../styles/TaskList.css'
 
-function TodoList(props) {
+function TaskList(props) {
     return (
-        <section className="TodoList">
+        <section className="TaskList">
             <ul>
                 {props.children}
             </ul>
@@ -12,4 +12,4 @@ function TodoList(props) {
     );
 }
 
-export { TodoList };
+export { TaskList };

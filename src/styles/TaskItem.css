@@ -1,4 +1,4 @@
-.TodoItem {
+.TaskItem {
     display: grid;
     grid-template-columns: 40px auto;
     width: 500px;
@@ -7,7 +7,7 @@
     gap: 8px;
 }
 
-.TodoItem .icon {
+.TaskItem .icon {
     place-self: center;
     stroke-width: 2px;
     fill: none;
@@ -16,23 +16,23 @@
     stroke-linejoin: round;
 }
 
-.TodoItem .check-icon {
+.TaskItem .check-icon {
     height: 30px;
     width: 30px;
     stroke: #f4f4f4;
 }
 
-.TodoItem .icon-check--active {
+.TaskItem .icon-check--active {
     stroke:  #4CAF50;
 }
 
-.TodoItem .check-icon:hover {
+.TaskItem .check-icon:hover {
     cursor: pointer;
     stroke-opacity: 60%;
 }
 
 
-.TodoItem .TodoItem-Conten {
+.TaskItem .TaskItem-Conten {
     display: grid;
     grid-template-columns: auto 40px;
     background-color: #fabb18;
@@ -41,34 +41,34 @@
     border-radius: 8px;
 }
 
-.TodoItem .TodoItem-Conten .TodoItem-p {
+.TaskItem .TaskItem-Conten .TaskItem-p {
     margin: 0;
     padding: 0 8px;
     color: white;
 }
 
-.TodoItem .TodoItem-Conten .TodoItem-p--complete {
+.TaskItem .TaskItem-Conten .TaskItem-p--complete {
     text-decoration: line-through;
 }
 
-.TodoItem .TodoItem-Conten .x-icon {
+.TaskItem .TaskItem-Conten .x-icon {
     height: 24px;
     width: 24px;
     stroke: #000000;
 }
 
-.TodoItem .TodoItem-Conten .x-icon:hover {
+.TaskItem .TaskItem-Conten .x-icon:hover {
     stroke: darkred;
     cursor: pointer;
 }
 
-.TodoItem .TodoItem-Conten .x-icon:active,
-.TodoItem .check-icon:active {
+.TaskItem .TaskItem-Conten .x-icon:active,
+.TaskItem .check-icon:active {
     width: 50%;
 }
 
 @media (max-width: 640px) {
-    .TodoItem {
+    .TaskItem {
         width: 320px;
     }
 }
