@@ -28,16 +28,26 @@ function App() {
   : tasks.filter(task => !!task.text.toLowerCase().includes(stateSearchValue.toLowerCase()));
   
   const completeTask = (text) => {
-    const taskIndex = tasks.findIndex(task => task.text === text);
+    // const taskIndex = tasks.findIndex(task => task.text === text);
+    // const newTasks = [...tasks];
+    // newTasks[taskIndex].completed = !newTasks[taskIndex].completed;
+    // setTasks(newTasks);
+    
+    //Todo: Cambiar text por index
     const newTasks = [...tasks];
-    newTasks[taskIndex].completed = !newTasks[taskIndex].completed;
+    newTasks[text].completed = !newTasks[text].completed;
     setTasks(newTasks);
   };
-
+  
   const deleteTask = (text) => {
-    const taskIndex = tasks.findIndex(task => task.text === text);
+    // const taskIndex = tasks.findIndex(task => task.text === text);
+    // const newTasks = [...tasks];
+    // newTasks.splice(taskIndex, 1);
+    // setTasks(newTasks);
+    
+    //Todo: Cambiar text por index
     const newTasks = [...tasks];
-    newTasks.splice(taskIndex, 1);
+    newTasks.splice(text, 1);
     setTasks(newTasks);
   };
 
@@ -56,13 +66,13 @@ function App() {
         />
 
         <TaskList>
-          {tasksFilter.map(task => (
+          {tasksFilter.map((task, index) => (
             <TaskItem 
-              key={task.text} 
+              key={index}
               text={task.text} 
               completed={task.completed}
-              onComplete={() => completeTask(task.text)}
-              onDelete={() => deleteTask(task.text)}
+              onComplete={() => completeTask(index)}
+              onDelete={() => deleteTask(index)}
             />
           ))}
         </TaskList>
