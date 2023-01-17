@@ -3,16 +3,40 @@ import React from 'react';
 import { AppUi } from './AppUi';
 
 
-const defaulTasks = [
-  { text: 'Cortar cebolla 3', completed: true },
-  { text: 'tomar curso de intro a React', completed: false },
-  { text: 'Llorar con la llorona', completed: false },
-  { text: 'Has completado 2 de 3 tareas', completed: false },
-  { text: 'Hascompletado2de3tareas', completed: false },
-];
+// const defaulTasks = [
+//   { text: 'Cortar cebolla 3', completed: true },
+//   { text: 'tomar curso de intro a React', completed: false },
+//   { text: 'Llorar con la llorona', completed: false },
+//   { text: 'Has completado 2 de 3 tareas', completed: false },
+//   { text: 'Hascompletado2de3tareas', completed: false },
+// ];
+
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
+  
+  if(!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
+  } else {
+    parsedItem = JSON.parse(localStorageItem)
+  }
+
+  const [item, setItem] = React.useState(parsedItem);
+  
+  const saveItem = (newItem) => {
+    const stringifiedItem = JSON.stringify(newItem);
+    localStorage.setItem(itemName, stringifiedItem);
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+}
 
 function App() {
-  const [tasks, setTasks] = React.useState(defaulTasks);
+
+  const [tasks, saveTask] = useLocalStorage('TASKS_V1', []);
+
   const [stateSearchValue, setStateSearchValue] = React.useState('');
 
   const completedTasks = tasks.filter(task => !!task.completed).length;
@@ -21,6 +45,7 @@ function App() {
   const tasksFilter = stateSearchValue < 1
     ? tasks
     : tasks.filter(task => !!task.text.toLowerCase().includes(stateSearchValue.toLowerCase()));
+
 
   const completeTask = (text) => {
     // const taskIndex = tasks.findIndex(task => task.text === text);
@@ -31,7 +56,7 @@ function App() {
     //Todo: Cambiar text por index
     const newTasks = [...tasks];
     newTasks[text].completed = !newTasks[text].completed;
-    setTasks(newTasks);
+    saveTask(newTasks);
   };
 
   const deleteTask = (text) => {
@@ -43,7 +68,7 @@ function App() {
     //Todo: Cambiar text por index
     const newTasks = [...tasks];
     newTasks.splice(text, 1);
-    setTasks(newTasks);
+    saveTask(newTasks);
   };
 
   return (
