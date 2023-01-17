@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/TaskSearch.css'
+import './TaskSearch.css'
 
 
 function TaskSearch({stateSearchValue, setStateSearchValue}) {

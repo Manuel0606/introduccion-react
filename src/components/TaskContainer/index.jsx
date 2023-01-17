@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../styles/TaskContainer.css'
+import './TaskContainer.css'
 
 function TaskContainer(props) {
     return (

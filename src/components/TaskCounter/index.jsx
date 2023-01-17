@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/TaskCounter.css'
+import './TaskCounter.css'
 
 
 function TaskCounter({total, completed}) {

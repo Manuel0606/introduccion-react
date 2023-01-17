@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../styles/CreateTaskButton.css'
+import './CreateTaskButton.css'
 
 function CreateTaskButton() {
     const onClickButton = () => {

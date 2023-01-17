@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../styles/TaskItem.css'
+import './TaskItem.css'
 
 function TaskItem(props) {
     return (
