@@ -10,6 +10,8 @@ import { TaskContainer } from '../TaskContainer';
 import './App.css';
 
 function AppUi({
+    loading,
+    error,
     totalTasks,
     completedTasks,
     stateSearchValue,
@@ -33,6 +35,10 @@ function AppUi({
                 />
 
                 <TaskList>
+                    {error && <p>Ups, hubo un error...</p>}
+                    {loading && <p>Estamos cargando, espera un momento...</p>}
+                    {(!loading && !tasksFilter.length) && <p>Crea tu primera tarea</p>}
+
                     {tasksFilter.map((task, index) => (
                         <TaskItem
                             key={index}
