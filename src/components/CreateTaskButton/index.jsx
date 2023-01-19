@@ -1,10 +1,13 @@
 import React from "react";
 
 import './CreateTaskButton.css'
+import { TaskContext } from "../TaskContext";
 
 function CreateTaskButton() {
+    const { openModal, setOpenModal } = React.useContext(TaskContext);
+
     const onClickButton = () => {
-        alert('Aquí debe abrirse el modal');
+        setOpenModal(!openModal);
     };
 
     return (

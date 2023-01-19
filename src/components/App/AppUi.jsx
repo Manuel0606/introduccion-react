@@ -1,38 +1,34 @@
 import React from "react";
 
+import { TaskContext } from "../TaskContext";
 import { TaskCounter } from '../TaskCounter';
 import { TaskSearch } from '../TaskSearch';
 import { CreateTaskButton } from '../CreateTaskButton';
 import { TaskList } from '../TaskList';
 import { TaskItem } from '../TaskItem';
 import { TaskContainer } from '../TaskContainer';
+import { Modal } from "../modal";
+import { TaskForm } from "../TaskForm";
 
 import './App.css';
 
-function AppUi({
-    loading,
-    error,
-    totalTasks,
-    completedTasks,
-    stateSearchValue,
-    setStateSearchValue,
-    tasksFilter,
-    completeTask,
-    deleteTask
-}) {
+function AppUi() {
+    const {
+        error,
+        loading,
+        tasksFilter,
+        completeTask,
+        deleteTask,
+        openModal,
+    } = React.useContext(TaskContext);
+
     return (
         <React.Fragment>
 
             <TaskContainer>
-                <TaskCounter
-                    total={totalTasks}
-                    completed={completedTasks}
-                />
+                <TaskCounter />
 
-                <TaskSearch
-                    stateSearchValue={stateSearchValue}
-                    setStateSearchValue={setStateSearchValue}
-                />
+                <TaskSearch />
 
                 <TaskList>
                     {error && <p>Ups, hubo un error...</p>}
@@ -50,8 +46,14 @@ function AppUi({
                     ))}
                 </TaskList>
 
-                <CreateTaskButton />
+                <CreateTaskButton/>
             </TaskContainer>
+
+            {!!openModal && (
+                <Modal>
+                    <TaskForm/>
+                </Modal>
+            )}
 
         </React.Fragment>
     );
