@@ -3,3 +3,10 @@ body {
   font-family: 'Quicksand', sans-serif;
   background-color: #1c1c1c;
 }
+
+.EmptyTask-p {
+  color: white;
+  font-size: 28px;
+  text-align: center;
+  margin: 0;
+}

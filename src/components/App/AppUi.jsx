@@ -9,6 +9,8 @@ import { TaskItem } from '../TaskItem';
 import { TaskContainer } from '../TaskContainer';
 import { Modal } from "../modal";
 import { TaskForm } from "../TaskForm";
+import { Loading } from "../Loading";
+import { Error } from "../Error";
 
 import './App.css';
 
@@ -31,9 +33,9 @@ function AppUi() {
                 <TaskSearch />
 
                 <TaskList>
-                    {error && <p>Ups, hubo un error...</p>}
-                    {loading && <p>Estamos cargando, espera un momento...</p>}
-                    {(!loading && !tasksFilter.length) && <p>Crea tu primera tarea</p>}
+                    {error && <Error/>}
+                    {loading && <Loading/>}
+                    {(!loading && !tasksFilter.length) && <p className="EmptyTask-p">Crea tu primera tarea</p>}
 
                     {tasksFilter.map((task, index) => (
                         <TaskItem
