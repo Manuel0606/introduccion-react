@@ -1,7 +1,7 @@
 .TaskItem {
     display: grid;
     grid-template-columns: 40px auto;
-    width: 500px;
+    width: 600px;
     min-height: 44px;
     align-items: center;
     gap: 8px;
