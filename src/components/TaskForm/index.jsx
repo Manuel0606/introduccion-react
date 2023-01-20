@@ -1,6 +1,8 @@
 import React from "react";
 import { TaskContext } from "../TaskContext";
 
+import './TaskForm.css';
+
 function TaskForm() {
     const [newTaskValue, setNewTaskValue] = React.useState('');
     const { addTask, setOpenModal } = React.useContext(TaskContext);
@@ -20,22 +22,24 @@ function TaskForm() {
     };
 
     return(
-        <form onSubmit={onSubmit}>
-            <label>...</label>
+        <form className="TaskForm" onSubmit={onSubmit}>
+            <label>Escribe una nueva tarea</label>
             <textarea
                 value={newTaskValue}
                 onChange={onChange}
-                placeholder="Excribe una tarea"
+                placeholder="Escribe una tarea"
             />
-            <div>
+            <div className="TaskForm-buttonContainer">
                 <button
                     type="button"
                     onClick={onCancel}
+                    className="TaskForm-button button-cancel"
                 >
                     Cancelar
                 </button>
                 <button
                     type="submit"
+                    className="TaskForm-button button-submit"
                 >
                     Añadir
                 </button>
